@@ -23,7 +23,6 @@
         }
     ],
     "require": {
-        "voryx/thruway": "dev-ratchet-0.4",
         "cboden/ratchet": "0.4.x-dev",
         "guzzlehttp/psr7": "^1.4"
     },
