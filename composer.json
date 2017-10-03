@@ -23,7 +23,7 @@
         }
     ],
     "require": {
-        "cboden/ratchet": "0.4.x-dev",
+        "cboden/ratchet": "^0.4",
         "guzzlehttp/psr7": "^1.4"
     },
     "autoload": {
