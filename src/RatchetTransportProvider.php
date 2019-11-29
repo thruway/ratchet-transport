@@ -94,7 +94,7 @@ class RatchetTransportProvider extends AbstractRouterTransportProvider implement
 
         $this->sessions->attach($conn, $session);
 
-        $this->router->getEventDispatcher()->dispatch("connection_open", new ConnectionOpenEvent($session));
+        $this->router->getEventDispatcher()->dispatch(new ConnectionOpenEvent($session), 'connection_open');
     }
 
     /** @inheritdoc */
@@ -105,7 +105,7 @@ class RatchetTransportProvider extends AbstractRouterTransportProvider implement
 
         $this->sessions->detach($conn);
 
-        $this->router->getEventDispatcher()->dispatch('connection_close', new ConnectionCloseEvent($session));
+        $this->router->getEventDispatcher()->dispatch(new ConnectionCloseEvent($session), 'connection_close');
 
         unset($this->sessions[$conn]);
 
