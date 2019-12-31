@@ -41,17 +41,17 @@ class RatchetTransportProvider extends AbstractRouterTransportProvider implement
     /**
      * @var \Ratchet\Server\IoServer
      */
-    private $server;
+    protected $server;
 
     /**
      * @var \SplObjectStorage
      */
-    private $sessions;
+    protected $sessions;
 
     /**
      * @var WsServer
      */
-    private $ws;
+    protected $ws;
 
     /**
      * Constructor
