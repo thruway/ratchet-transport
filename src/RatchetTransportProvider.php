@@ -59,6 +59,7 @@ class RatchetTransportProvider extends AbstractRouterTransportProvider implement
      *
      * @param string $address
      * @param string|int $port
+     * @param array $context
      */
     public function __construct($address = "127.0.0.1", $port = 8080, array $context = [])
     {
