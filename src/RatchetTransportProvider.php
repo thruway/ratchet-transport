@@ -19,6 +19,7 @@ use Ratchet\Server\IoServer;
 use Ratchet\WebSocket\WsServer;
 use Ratchet\WebSocket\WsServerInterface;
 use React\Socket\Server as Reactor;
+use React\Socket\SecureServer as SecureReactor;
 use Thruway\Session;
 
 /**
@@ -59,12 +60,13 @@ class RatchetTransportProvider extends AbstractRouterTransportProvider implement
      * @param string $address
      * @param string|int $port
      */
-    public function __construct($address = "127.0.0.1", $port = 8080)
+    public function __construct($address = "127.0.0.1", $port = 8080, array $context = [])
     {
         $this->port     = $port;
         $this->address  = $address;
         $this->sessions = new \SplObjectStorage();
         $this->ws       = new WsServer($this);
+        $this->context  = $context;
     }
 
     /**
@@ -165,6 +167,10 @@ class RatchetTransportProvider extends AbstractRouterTransportProvider implement
     {
 
         $socket = new Reactor('tcp://' . $this->address . ':' . $this->port, $this->loop);
+
+        if (!empty($this->context)) {
+            $secureSocket = new SecureReactor($socket, $this->loop, $this->context);
+        }
 
         Logger::info($this, "Websocket listening on ".$this->address.":".$this->port);
 
