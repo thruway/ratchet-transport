@@ -1,6 +1,6 @@
 <?php
 
-namespace Thruway\Transport;
+namespace jankowskico\Transport;
 
 use GuzzleHttp\Psr7\Request;
 use Ratchet\RFC6455\Messaging\Frame;

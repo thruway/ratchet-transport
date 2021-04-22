@@ -1,6 +1,6 @@
 <?php
 
-namespace Thruway\Transport;
+namespace jankowskico\Transport;
 
 use Ratchet\RFC6455\Messaging\Frame;
 use React\EventLoop\LoopInterface;
@@ -25,7 +25,7 @@ use Thruway\Session;
 /**
  * Class RatchetTransportProvider
  *
- * @package Thruway\Transport
+ * @package jankowskico\Transport
  */
 class RatchetTransportProvider extends AbstractRouterTransportProvider implements MessageComponentInterface, WsServerInterface
 {

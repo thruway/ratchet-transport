@@ -1,5 +1,5 @@
 {
-    "name": "thruway/ratchet-transport",
+    "name": "jankowskico/ratchet-transport",
     "type": "library",
     "description": "Ratchet Transport for Thruway",
     "keywords": [
@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Thruway\\Transport\\": "src/"
+            "jankowskico\\Transport\\": "src/"
         }
     }
 }
