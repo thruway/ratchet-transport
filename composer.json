@@ -24,7 +24,7 @@
     ],
     "require": {
         "cboden/ratchet": "^0.4",
-        "guzzlehttp/psr7": "^1.4"
+        "guzzlehttp/psr7": "^1.4|^2.0"
     },
     "autoload": {
         "psr-4": {

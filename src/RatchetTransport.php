@@ -74,7 +74,7 @@ class RatchetTransport extends AbstractTransport
         /** @var Request $request */
         $request     = $this->conn->httpRequest;
         $headers     = $request->getHeaders();
-        $queryParams = \GuzzleHttp\Psr7\parse_query($request->getUri()->getQuery());
+        $queryParams = \GuzzleHttp\Psr7\Query::parse($request->getUri()->getQuery());
         $cookies     = $request->getHeader("Cookie");
         $url         = $request->getUri()->getPath();
 
